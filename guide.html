@@ -59,6 +59,34 @@ h1 {
   font-weight: 700; font-size: 11px;
 }
 
+/* ── 이유 섹션 ── */
+.reason-block {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #F0F4FF 0%, #F8F0FF 100%);
+  border-radius: 12px;
+  padding: 16px 18px;
+  border: 1px solid #E0E7FF;
+}
+.reason-block-header {
+  font-size: 11px; font-weight: 800; color: #6366F1;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
+}
+.reason-item {
+  display: flex; gap: 10px; margin-bottom: 8px; align-items: flex-start;
+}
+.reason-item:last-child { margin-bottom: 0; }
+.reason-num {
+  flex-shrink: 0; width: 20px; height: 20px;
+  background: #6366F1; color: #fff;
+  border-radius: 50%; font-size: 10px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.reason-text {
+  font-size: 12.5px; line-height: 1.7; color: #374151;
+}
+.reason-text strong { color: #4F46E5; }
+
 /* ── 프롬프트 섹션 ── */
 .prompt-block {
   margin-top: 20px;
@@ -452,6 +480,22 @@ h1 {
     친구 초대 시에는 shimmer <strong>없음</strong> — 바 flash + 코인 바운스가 피드백을 대체합니다.
   </div>
 
+  <div class="reason-block">
+    <div class="reason-block-header">💡 왜 이 애니메이션인가?</div>
+    <div class="reason-item">
+      <div class="reason-num">1</div>
+      <div class="reason-text"><strong>첫인상에서 카드의 존재를 각인</strong> — 진입 직후 빛이 스치는 shimmer는 "여기 뭔가 있다"는 신호를 정적인 카드보다 훨씬 강하게 전달한다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">2</div>
+      <div class="reason-text"><strong>1회만 실행 = 신뢰감</strong> — 반복되면 광고처럼 느껴져 무시된다. 진입 시 단 1회만 재생해 자연스럽고 거슬리지 않는다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">3</div>
+      <div class="reason-text"><strong>행동 유도 없이 주의만 끔</strong> — 강제 클릭이나 팝업 없이 시각적 효과만으로 카드로 시선을 유도한다. 부담이 없어 거부감이 낮다.</div>
+    </div>
+  </div>
+
   <div class="prompt-block">
     <div class="prompt-block-header">
       <span>🤖 구현 프롬프트</span>
@@ -503,6 +547,22 @@ easing은 <em>ease</em>, opacity는 <em>70%</em>로 자연스럽게.</div>
 
   <div class="note" style="margin-top:16px;">
     <strong>⚠️ 구현 주의</strong> — flash 애니메이션을 재실행하려면 클래스를 remove → reflow → add 순서로 처리해야 한다. 단순히 add만 하면 이미 재생 중일 때 반응하지 않는다.
+  </div>
+
+  <div class="reason-block">
+    <div class="reason-block-header">💡 왜 이 애니메이션인가?</div>
+    <div class="reason-item">
+      <div class="reason-num">1</div>
+      <div class="reason-text"><strong>진행감으로 완료 동기 부여</strong> — 바가 늘어나는 시각적 피드백은 "목표에 가까워지고 있다"는 느낌을 준다. 숫자만 바뀌는 것보다 행동 완료 욕구가 높아진다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">2</div>
+      <div class="reason-text"><strong>Spring easing = 살아있는 느낌</strong> — 목표치를 살짝 넘었다 돌아오는 탄성은 기계적 증가보다 훨씬 생동감 있게 느껴진다. 사용자가 "반응했다"고 인식한다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">3</div>
+      <div class="reason-text"><strong>Flash = 보상 감각</strong> — 바가 늘어날 때 스치는 빛은 미세한 보상 신호다. 게임의 경험치 획득과 같은 긍정적 피드백을 준다.</div>
+    </div>
   </div>
 
   <div class="prompt-block">
@@ -691,6 +751,22 @@ easing은 <em>ease</em>, opacity는 <em>70%</em>로 자연스럽게.</div>
 
   <div class="note">
     <strong>⚠️ 구현 주의</strong> — 회전 애니메이션 재실행 시 <code>classList.remove → reflow(void el.offsetWidth) → classList.add</code> 순서를 반드시 지킨다. reflow 없이 add만 하면 이미 재생 중일 때 반응하지 않는다.
+  </div>
+
+  <div class="reason-block">
+    <div class="reason-block-header">💡 왜 이 애니메이션인가?</div>
+    <div class="reason-item">
+      <div class="reason-num">1</div>
+      <div class="reason-text"><strong>클릭이 처리되고 있음을 즉시 전달</strong> — 새로고침 버튼 클릭 시 아무 반응이 없으면 사용자는 "눌렸나?" 하고 재클릭한다. 회전은 "처리 중"을 직관적으로 알린다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">2</div>
+      <div class="reason-text"><strong>360도 단발 회전 = 완료 느낌</strong> — 무한 스피너와 달리 한 바퀴 돌고 멈추면 "갱신 완료"를 암시한다. 사용자가 기다리지 않아도 됨을 느낀다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">3</div>
+      <div class="reason-text"><strong>아이콘 자체가 의미 전달</strong> — ↻ 아이콘이 실제로 도는 것은 아이콘의 의미(새로고침)와 동작이 일치해 직관성이 높다.</div>
+    </div>
   </div>
 
   <div class="prompt-block">
@@ -923,6 +999,22 @@ duration <em>600ms</em>, easing <em>cubic-bezier(0.4, 0, 0.2, 1)</em>.
     <strong>💡 포인트</strong> — 배경 그라데이션은 전환 내내 고정. 보상받기 카드 컨텐츠만 아래로 사라지고, 결과 컨텐츠(동전·텍스트·빛)만 위에서 애니메이션. dismiss 시에는 배경까지 통째로 위로 올라가 "이 구역이 사라진다"는 느낌을 준다.
   </div>
 
+  <div class="reason-block">
+    <div class="reason-block-header">💡 왜 이 애니메이션인가?</div>
+    <div class="reason-item">
+      <div class="reason-num">1</div>
+      <div class="reason-text"><strong>보상의 무게감 전달</strong> — 단순 토스트나 팝업이 아닌 화면 전체를 차지하는 결과 화면은 "100P를 실제로 받았다"는 경험을 준다. 보상을 작게 처리하면 사용자는 잘 인지하지 못한다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">2</div>
+      <div class="reason-text"><strong>동전이 올라오는 연출 = 획득 감각</strong> — 아래서 위로 솟아오르는 코인 spring 애니메이션은 "무언가를 얻었다"는 물리적 감각을 시각화한다. 게임의 아이템 획득 연출과 같은 원리.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">3</div>
+      <div class="reason-text"><strong>자동 dismiss = 부담 없는 전환</strong> — 사용자가 닫기 버튼을 찾지 않아도 2초 후 자연스럽게 사라진다. "포인트 받았다"는 안내 후 흐름이 끊기지 않는다.</div>
+    </div>
+  </div>
+
   <div class="prompt-block">
     <div class="prompt-block-header">
       <span>🤖 구현 프롬프트</span>
@@ -1024,6 +1116,22 @@ duration <em>600ms</em>, easing <em>cubic-bezier(0.4, 0, 0.2, 1)</em>.
 
   <div class="note" style="margin-top:16px;">
     <strong>💡 포인트</strong> — 스크롤 중에는 원형으로 숨어 콘텐츠를 가리지 않는다. 스크롤이 멈추면 다시 펼쳐져 혜택을 노출. 사용자가 페이지를 탐색하는 흐름을 방해하지 않으면서도 적절한 타이밍에 CTA를 노출하는 패턴.
+  </div>
+
+  <div class="reason-block">
+    <div class="reason-block-header">💡 왜 이 애니메이션인가?</div>
+    <div class="reason-item">
+      <div class="reason-num">1</div>
+      <div class="reason-text"><strong>스크롤 중 방해 최소화</strong> — 사용자가 콘텐츠를 탐색하는 동안 배너가 펼쳐져 있으면 시선을 빼앗고 불쾌감을 준다. 원형으로 접혀 존재만 알리고 콘텐츠 시인성을 확보한다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">2</div>
+      <div class="reason-text"><strong>멈춤 = 읽을 준비 완료 시점</strong> — 스크롤이 멈춘 순간은 사용자가 콘텐츠를 소화하려는 타이밍이다. 이때 혜택 배너를 펼쳐 자연스럽게 눈에 들어오게 한다.</div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">3</div>
+      <div class="reason-text"><strong>원형 아이콘 = 사라지지 않는 존재감</strong> — 접혀 있어도 코인 아이콘이 항상 보여 "뭔가 있다"는 인지가 유지된다. 완전히 숨기는 것보다 클릭 전환율이 높다.</div>
+    </div>
   </div>
 
   <div class="prompt-block">
